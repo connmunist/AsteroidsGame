@@ -23,6 +23,9 @@ public void draw()
   for(int i = 0;i< chan.size(); i++){
     chan.get(i).move();
     chan.get(i).show();
+    float d = dist((float)jp.getX(), (float)jp.getY(), (float)chan.get(i).getX(), (float)chan.get(i).getY());
+    if (d < 20)
+      chan.remove(i);
   }
 }
 public void keyPressed(){
